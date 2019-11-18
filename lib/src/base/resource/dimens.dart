@@ -1,4 +1,5 @@
 const double dm_text_delta = 2.0;
+
 const double dm_text_xxl = 20.0 + dm_text_delta;
 const double dm_text_xl = 18.0 + dm_text_delta;
 const double dm_text_lg = 16.0 + dm_text_delta;

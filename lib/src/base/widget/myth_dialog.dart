@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arch_template/src/base/style/sized_box.dart';
-import 'package:flutter_arch_template/src/base/style/text_style.dart';
+import 'package:flutter_arch_template/src/base/style/margin_theme.dart';
+import 'package:flutter_arch_template/src/base/style/text_theme.dart';
 import 'package:flutter_arch_template/src/base/widget/myth_button.dart';
 import 'package:flutter_arch_template/src/base/widget/myth_navigator.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -44,20 +44,20 @@ showPromptDialog(
             children: <Widget>[
               Text(
                 title,
-                style: textStyleTitle1(),
+                style: getTextTheme(context).headline,
               ),
               Visibility(
                 visible: content != null,
-                child: boxSm(),
+                child: MarginTheme.mgSm(),
               ),
               Visibility(
                 visible: content != null,
                 child: Text(
                   content == null ? "" : content,
-                  style: textStyleSm(),
+                  style: getTextTheme(context).body1,
                 ),
               ),
-              boxNor(),
+              MarginTheme.mgNor(),
               SubmitButton(
                 text: buttonText == null ? "确定" : buttonText,
                 onPressed: () {
@@ -95,20 +95,20 @@ showChoiceDialog(
             children: <Widget>[
               Text(
                 title,
-                style: textStyleTitle1(),
+                style: getTextTheme(context).headline,
               ),
               Offstage(
                 offstage: content == null,
-                child: boxSm(),
+                child: MarginTheme.mgSm(),
               ),
               Offstage(
                 offstage: content == null,
                 child: Text(
                   content == null ? "" : content,
-                  style: textStyleSm(),
+                  style: getTextTheme(context).body1,
                 ),
               ),
-              boxNor(),
+              MarginTheme.mgNor(),
               Row(
                 children: <Widget>[
                   Expanded(
@@ -122,7 +122,7 @@ showChoiceDialog(
                       },
                     ),
                   ),
-                  boxSm(),
+                  MarginTheme.mgSm(),
                   Expanded(
                     child: SubmitButton(
                       text: buttonConfirm == null ? "确定" : buttonConfirm,

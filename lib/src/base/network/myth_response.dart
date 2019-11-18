@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 class MythResponse {
   static const NET_DISCONNECT = -1;
   static const NET_SERVER_ERROR = -2;
-  static const NET_ERROR = -4;
+  static const NET_ERROR = -3;
 
   final Response response;
   final bool isSuccess;

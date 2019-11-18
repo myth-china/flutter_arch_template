@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arch_template/src/base/style/sized_box.dart';
+import 'package:flutter_arch_template/src/base/style/margin_theme.dart';
 import 'package:flutter_arch_template/src/base/style/text_theme.dart';
 import 'package:flutter_arch_template/src/base/widget/myth_app_bar.dart';
 import 'package:flutter_arch_template/src/base/widget/myth_button.dart';
@@ -28,7 +28,7 @@ class SigninPage extends StatelessWidget {
                       "请输入手机号",
                       style: getTextTheme(context).subhead,
                     ),
-                    boxNor(),
+                    MarginTheme.mgNor(),
                     TextField(
                       style: getTextTheme(context).body1,
                       decoration: InputDecoration(hintText: "11位手机号"),
@@ -36,7 +36,7 @@ class SigninPage extends StatelessWidget {
                         model.username = val;
                       },
                     ),
-                    boxNor(),
+                    MarginTheme.mgNor(),
                     SubmitButton(
                       text: "登录",
                       onPressed: model.submit,
