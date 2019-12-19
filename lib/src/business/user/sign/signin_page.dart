@@ -3,7 +3,7 @@ import 'package:flutter_arch_template/src/base/style/margin_theme.dart';
 import 'package:flutter_arch_template/src/base/style/text_theme.dart';
 import 'package:flutter_arch_template/src/base/widget/myth_app_bar.dart';
 import 'package:flutter_arch_template/src/base/widget/myth_button.dart';
-import 'package:flutter_arch_template/src/base/widget/myth_loading_container.dart';
+import 'package:flutter_arch_template/src/base/widget/myth_loading_widget.dart';
 import 'package:flutter_arch_template/src/base/widget/myth_scaffold.dart';
 import 'package:flutter_arch_template/src/business/user/sign/signin_model.dart';
 import 'package:provider/provider.dart';
@@ -17,8 +17,8 @@ class SigninPage extends StatelessWidget {
         builder: (context, model, child) {
           return MythScaffold(
             appBar: MythAppBar(context, "登录"),
-            body: LoadingContainer(
-              controller: model.loadingController,
+            body: LoadingCover(
+              property: model.loadingProperty,
               child: Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Column(
@@ -28,7 +28,7 @@ class SigninPage extends StatelessWidget {
                       "请输入手机号",
                       style: getTextTheme(context).subhead,
                     ),
-                    MarginTheme.mgNor(),
+                    getMarginTheme(context).mgNor(),
                     TextField(
                       style: getTextTheme(context).body1,
                       decoration: InputDecoration(hintText: "11位手机号"),
@@ -36,7 +36,7 @@ class SigninPage extends StatelessWidget {
                         model.username = val;
                       },
                     ),
-                    MarginTheme.mgNor(),
+                    getMarginTheme(context).mgNor(),
                     SubmitButton(
                       text: "登录",
                       onPressed: model.submit,

@@ -48,7 +48,7 @@ showPromptDialog(
               ),
               Visibility(
                 visible: content != null,
-                child: MarginTheme.mgSm(),
+                child: getMarginTheme(context).mgSm(),
               ),
               Visibility(
                 visible: content != null,
@@ -57,7 +57,7 @@ showPromptDialog(
                   style: getTextTheme(context).body1,
                 ),
               ),
-              MarginTheme.mgNor(),
+              getMarginTheme(context).mgNor(),
               SubmitButton(
                 text: buttonText == null ? "确定" : buttonText,
                 onPressed: () {
@@ -99,7 +99,7 @@ showChoiceDialog(
               ),
               Offstage(
                 offstage: content == null,
-                child: MarginTheme.mgSm(),
+                child: getMarginTheme(context).mgSm(),
               ),
               Offstage(
                 offstage: content == null,
@@ -108,7 +108,7 @@ showChoiceDialog(
                   style: getTextTheme(context).body1,
                 ),
               ),
-              MarginTheme.mgNor(),
+              getMarginTheme(context).mgNor(),
               Row(
                 children: <Widget>[
                   Expanded(
@@ -122,7 +122,7 @@ showChoiceDialog(
                       },
                     ),
                   ),
-                  MarginTheme.mgSm(),
+                  getMarginTheme(context).mgSm(),
                   Expanded(
                     child: SubmitButton(
                       text: buttonConfirm == null ? "确定" : buttonConfirm,

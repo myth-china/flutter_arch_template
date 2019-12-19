@@ -1,47 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-Widget useLoadingBox(
-  LoadingProperty property,
-  Widget child, {
-  scrollable = false,
-  usePadding = true,
-  paddingTop = 15.0,
-}) {
-  Widget _buildChild(child) {
-    return SafeArea(
-      child: Padding(
-        padding: usePadding
-            ? EdgeInsets.only(
-                top: paddingTop,
-                left: 15.0,
-                right: 15.0,
-              )
-            : const EdgeInsets.all(0.0),
-        child: child,
-      ),
-    );
-  }
-
-  return Stack(
-    children: <Widget>[
-      scrollable
-          ? SingleChildScrollView(
-              child: _buildChild(child),
-            )
-          : _buildChild(child),
-      Visibility(
-          visible: property._showFlag,
-          child: Container(
-              height: double.infinity,
-              color: Colors.black54,
-              child: SpinKitChasingDots(
-                color: Colors.blue,
-              ))),
-    ],
-  );
-}
-
 class LoadingCover extends StatelessWidget {
   LoadingCover({
     this.property,
